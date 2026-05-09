@@ -145,8 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentItem.classList.add('active');
                 // Scroll to item for better UX
                 setTimeout(() => {
-                    currentItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
+                    const viewportHeight = window.innerHeight;
+                    const itemRect = currentItem.getBoundingClientRect();
+                    const itemTop = itemRect.top + window.pageYOffset;
+                    const headerHeight = btn.offsetHeight;
+                    
+                    // Center the header on the screen
+                    const scrollToPosition = itemTop - (viewportHeight / 2) + (headerHeight / 2);
+                    
+                    window.scrollTo({
+                        top: scrollToPosition,
+                        behavior: 'smooth'
+                    });
+                }, 450);
                 // Update Breadcrumb
                 setBreadcrumb([title]);
             } else {
