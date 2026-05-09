@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentItem.classList.add('active');
                 // Scroll to item for better UX
                 setTimeout(() => {
-                    currentItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    currentItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 300);
                 // Update Breadcrumb
                 setBreadcrumb([title]);
