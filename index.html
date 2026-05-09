@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YatraMitr. | Architecture Showcase</title>
+    <!-- Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: {
+                            bg: '#f7f7f7',
+                            white: '#ffffff',
+                            text: '#111111',
+                            border: '#d9d9d9',
+                            muted: '#737373',
+                            accent: '#e63946' // Soft accent red
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Helvetica Neue', 'sans-serif'],
+                        display: ['Montserrat', 'Helvetica Neue', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="fade-in">
+
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-base-white border-b border-base-border">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-display text-2xl font-bold tracking-tight">YatraMitr.</a>
+
+            <!-- Center Links -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="#" class="nav-link">Home</a>
+
+                <div class="dropdown h-20 flex items-center">
+                    <button class="nav-link flex items-center gap-1">Booking <i data-lucide="chevron-down"
+                            class="w-3 h-3"></i></button>
+                    <div
+                        class="dropdown-menu absolute top-20 left-0 bg-base-white border border-base-border p-4 min-w-[240px] shadow-sm">
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Hotel
+                                    Booking</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Ride Sharing
+                                    (Car, Bike & Taxi)</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Car Rental
+                                    Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown h-20 flex items-center">
+                    <button class="nav-link flex items-center gap-1">Packages <i data-lucide="chevron-down"
+                            class="w-3 h-3"></i></button>
+                    <div
+                        class="dropdown-menu absolute top-20 left-0 bg-base-white border border-base-border p-4 min-w-[280px] shadow-sm">
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Village Stay
+                                    Experiences</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Packages for
+                                    Couples</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Group Tour
+                                    Packages</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Destination
+                                    Discovery Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown h-20 flex items-center">
+                    <button class="nav-link flex items-center gap-1">Personalization <i data-lucide="chevron-down"
+                            class="w-3 h-3"></i></button>
+                    <div
+                        class="dropdown-menu absolute top-20 left-0 bg-base-white border border-base-border p-4 min-w-[320px] shadow-sm">
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">AI Itinerary
+                                    Planner</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">AR Guided
+                                    Historical Tours</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Personalized
+                                    Travel Recommendations</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Local Guide
+                                    Connectivity</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown h-20 flex items-center">
+                    <button class="nav-link flex items-center gap-1">Support <i data-lucide="chevron-down"
+                            class="w-3 h-3"></i></button>
+                    <div
+                        class="dropdown-menu absolute top-20 left-0 bg-base-white border border-base-border p-4 min-w-[280px] shadow-sm">
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Luggage
+                                    Pickup & Delivery</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Pet Travel
+                                    Assistance</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Customer
+                                    Support Assistance</a></li>
+                            <li><a href="#" class="text-base-muted hover:text-base-text transition-colors">Verified
+                                    Local Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4 justify-end">
+                <!-- Theme Toggle -->
+                <button
+                    class="w-8 h-8 rounded-full border border-base-border overflow-hidden bg-base-bg flex items-center justify-center hover:bg-base-text hover:text-base-white transition-colors group"
+                    title="Toggle Theme">
+                    <i data-lucide="moon" class="w-4 h-4"></i>
+                </button>
+
+                <!-- Notifications -->
+                <button
+                    class="w-8 h-8 rounded-full border border-base-border overflow-hidden bg-base-bg flex items-center justify-center hover:bg-base-text hover:text-base-white transition-colors group relative"
+                    title="Notifications">
+                    <i data-lucide="bell" class="w-4 h-4"></i>
+                    <span
+                        class="absolute top-[6px] right-[6px] w-2 h-2 bg-red-600 rounded-full border border-base-white"></span>
+                </button>
+
+                <!-- Right Profile -->
+                <div class="dropdown h-20 flex items-center">
+                    <button class="flex items-center gap-2 group">
+                        <div
+                            class="w-8 h-8 rounded-full border border-base-border overflow-hidden bg-base-bg flex items-center justify-center group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                            <i data-lucide="user" class="w-4 h-4"></i>
+                        </div>
+                    </button>
+                    <div
+                        class="dropdown-menu absolute top-20 right-0 bg-base-white border border-base-border p-6 min-w-[320px] shadow-sm z-50">
+                        <!-- Header Section -->
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full border border-base-border bg-base-bg flex items-center justify-center overflow-hidden">
+                                    <i data-lucide="user" class="w-6 h-6 text-base-text"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-base font-bold text-base-text">Alex Mitchell</span>
+                                    <span class="text-xs text-base-muted">+91 98765 43210</span>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="text-xs font-bold uppercase tracking-widest text-base-text hover:text-base-accent transition-colors">Edit</a>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="h-px bg-base-border mb-6"></div>
+
+                        <!-- Menu List -->
+                        <ul class="space-y-1 mb-4">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center gap-4 p-2 text-sm text-base-muted hover:bg-base-text hover:text-base-white transition-all group/item">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="font-medium">Password and security</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center gap-4 p-2 text-sm text-base-muted hover:bg-base-text hover:text-base-white transition-all group/item">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i data-lucide="history" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="font-medium">Booking and History</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center gap-4 p-2 text-sm text-base-muted hover:bg-base-text hover:text-base-white transition-all group/item">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i data-lucide="heart" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="font-medium">Wishlist</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center gap-4 p-2 text-sm text-base-muted hover:bg-base-text hover:text-base-white transition-all group/item">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i data-lucide="wallet" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="font-medium">Wallet and Rewards</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center gap-4 p-2 text-sm text-base-muted hover:bg-base-text hover:text-base-white transition-all group/item">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i data-lucide="settings" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="font-medium">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Footer Section -->
+                        <div class="pt-4 border-t border-base-border">
+                            <a href="#"
+                                class="flex items-center gap-4 p-2 text-sm font-bold text-red-600 hover:bg-base-text hover:text-base-white transition-all group/logout">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i data-lucide="log-out" class="w-4 h-4"></i>
+                                </div>
+                                <span>Logout Account</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="lg:hidden p-2 text-base-text"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div id="breadcrumb"
+        class="hidden sticky top-20 z-40 bg-base-white border-b border-base-border transition-all duration-300">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-4">
+            <div class="text-[10px] tracking-widest text-base-muted uppercase flex items-center gap-4"
+                id="breadcrumb-text">
+                <!-- Dynamically injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-6 lg:pt-12">
+        <div
+            class="relative w-full min-h-[70vh] bg-base-bg border border-base-border overflow-hidden flex items-center group">
+            <img src="https://d13bre0qp8legl.cloudfront.net/travel_journal/articles/header_images/rgC8FKj7lFAlU2M4grhKpOxNMCpYJoWdGi2AIn2d.jpg"
+                alt="Architecture Hero"
+                class="absolute inset-0 w-full h-full object-cover opacity-60 img-zoom group-hover:scale-105 transition-transform duration-1000">
+
+            <div
+                class="relative z-10 w-full px-6 md:px-12 lg:px-24 py-12 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Left Text -->
+                <div class="text-left max-w-2xl flex flex-col items-start w-full lg:w-1/2">
+                    <div class="text-[10px] tracking-[0.3em] uppercase text-base-text font-bold mb-6">YatraMitr
+                    </div>
+                    <h1
+                        class="text-display text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
+                        Your journey begins <br /> <span class="text-base-white">intelligently.</span>
+                    </h1>
+                    <p
+                        class="text-sm md:text-base bg-base-text text-base-white px-4 py-3 font-medium mb-8 leading-relaxed inline-block">
+                        Connect with verified local guides, discover authentic experiences, and book your complete
+                        itinerary in one seamless platform.
+                    </p>
+                </div>
+
+                <!-- Right Search Box -->
+                <div
+                    class="w-full lg:w-1/2 max-w-xl flex flex-col items-center lg:items-end justify-center min-h-[400px]">
+                    <!-- Trigger Button -->
+                    <button id="start-journey-btn"
+                        class="group px-10 py-5 bg-base-text text-base-white text-sm font-bold uppercase tracking-[0.2em] border border-base-text hover:bg-base-muted hover:border-base-muted transition-all duration-500 shadow-2xl flex items-center gap-4">
+                        Start Journey
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <!-- Actual Search Box (Revealed on click) -->
+                    <div id="search-box-content"
+                        class="hidden opacity-0 translate-y-8 transition-all duration-700 w-full bg-base-white/95 backdrop-blur-md border border-base-border p-6 md:p-8 shadow-sm">
+
+                        <!-- Tab Navigation -->
+                        <div class="flex overflow-x-auto hide-scrollbar border-b border-base-border mb-6">
+                            <button
+                                class="search-tab js-search-tab relative px-4 py-3 text-xs font-bold uppercase tracking-wider text-base-text transition-colors whitespace-nowrap"
+                                data-target="form-flights">
+                                <span class="flex items-center gap-2"><i data-lucide="plane" class="w-4 h-4"></i>
+                                    Flights</span>
+                                <div
+                                    class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] bg-base-text transition-transform duration-300 scale-x-100">
+                                </div>
+                            </button>
+                            <button
+                                class="search-tab js-search-tab relative px-4 py-3 text-xs font-bold uppercase tracking-wider text-base-muted hover:text-base-text transition-colors whitespace-nowrap"
+                                data-target="form-hotels">
+                                <span class="flex items-center gap-2"><i data-lucide="building" class="w-4 h-4"></i>
+                                    Hotels</span>
+                                <div
+                                    class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] bg-base-text transition-transform duration-300 scale-x-0">
+                                </div>
+                            </button>
+                            <button
+                                class="search-tab js-search-tab relative px-4 py-3 text-xs font-bold uppercase tracking-wider text-base-muted hover:text-base-text transition-colors whitespace-nowrap"
+                                data-target="form-packages">
+                                <span class="flex items-center gap-2"><i data-lucide="map" class="w-4 h-4"></i>
+                                    Packages</span>
+                                <div
+                                    class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] bg-base-text transition-transform duration-300 scale-x-0">
+                                </div>
+                            </button>
+                            <button
+                                class="search-tab js-search-tab relative px-4 py-3 text-xs font-bold uppercase tracking-wider text-base-muted hover:text-base-text transition-colors whitespace-nowrap"
+                                data-target="form-transport">
+                                <span class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4"></i>
+                                    Transport</span>
+                                <div
+                                    class="tab-indicator absolute bottom-0 left-0 w-full h-[2px] bg-base-text transition-transform duration-300 scale-x-0">
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Forms Container -->
+                        <div class="relative min-h-[300px]">
+
+                            <!-- 1. FLIGHTS FORM -->
+                            <form id="form-flights"
+                                class="search-form js-search-form block space-y-4 text-sm fade-in-fast"
+                                data-type="flights">
+                                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex flex-col relative z-0">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">From</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="map-pin"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="text" id="flight-from" placeholder="Departure city or airport"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        class="js-swap-btn absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-1 md:translate-y-2 z-10 w-8 h-8 bg-base-white border border-base-border rounded-full flex items-center justify-center hover:bg-base-text hover:text-base-white transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-base-text focus:ring-offset-2"
+                                        data-swap-1="flight-from" data-swap-2="flight-to">
+                                        <i data-lucide="arrow-left-right"
+                                            class="w-3 h-3 rotate-90 md:rotate-0 transition-transform duration-300"></i>
+                                    </button>
+                                    <div class="flex flex-col relative z-0">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">To</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="map-pin"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="text" id="flight-to" placeholder="Destination city or airport"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Departure</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="date"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Return</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="date"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Travelers
+                                        & Class</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="users"
+                                            class="w-4 h-4 text-base-muted absolute left-3 pointer-events-none"></i>
+                                        <select
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-8 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                            <option>1 Adult, Economy</option>
+                                            <option>2 Adults, Economy</option>
+                                            <option>2 Adults, 1 Child, Economy</option>
+                                            <option>1 Adult, Business</option>
+                                        </select>
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-base-muted absolute right-3 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-base-text text-base-white text-xs font-bold uppercase tracking-widest hover:bg-base-muted transition-colors border border-base-text hover:border-base-muted group/btn mt-2">
+                                    Search Flights <i data-lucide="search"
+                                        class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
+                                </button>
+                            </form>
+
+                            <!-- 2. HOTELS FORM -->
+                            <form id="form-hotels"
+                                class="search-form js-search-form hidden space-y-4 text-sm fade-in-fast"
+                                data-type="hotels">
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Destination</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                        <input type="text" placeholder="City, hotel, or landmark"
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Check-in</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="date"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Check-out</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="date"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Guests
+                                        & Rooms</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="users"
+                                            class="w-4 h-4 text-base-muted absolute left-3 pointer-events-none"></i>
+                                        <select
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-8 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                            <option>2 Adults, 1 Room</option>
+                                            <option>1 Adult, 1 Room</option>
+                                            <option>2 Adults, 1 Child, 1 Room</option>
+                                            <option>4 Adults, 2 Rooms</option>
+                                        </select>
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-base-muted absolute right-3 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-base-text text-base-white text-xs font-bold uppercase tracking-widest hover:bg-base-muted transition-colors border border-base-text hover:border-base-muted group/btn mt-2">
+                                    Search Hotels <i data-lucide="search"
+                                        class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
+                                </button>
+                            </form>
+
+                            <!-- 3. PACKAGES FORM -->
+                            <form id="form-packages"
+                                class="search-form js-search-form hidden space-y-4 text-sm fade-in-fast"
+                                data-type="packages">
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Destination
+                                        or Region</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="map" class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                        <input type="text" placeholder="Where do you want to go?"
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Travel
+                                            Month</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="month"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Duration</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="clock"
+                                                class="w-4 h-4 text-base-muted absolute left-3 pointer-events-none"></i>
+                                            <select
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-8 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                                <option>3 - 5 Days</option>
+                                                <option>1 Week</option>
+                                                <option>2 Weeks</option>
+                                                <option>More than 2 weeks</option>
+                                            </select>
+                                            <i data-lucide="chevron-down"
+                                                class="w-4 h-4 text-base-muted absolute right-3 pointer-events-none"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Budget
+                                        Range</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="wallet"
+                                            class="w-4 h-4 text-base-muted absolute left-3 pointer-events-none"></i>
+                                        <select
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-8 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                            <option>Standard ($500 - $1000)</option>
+                                            <option>Premium ($1000 - $3000)</option>
+                                            <option>Luxury ($3000+)</option>
+                                        </select>
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-base-muted absolute right-3 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-base-text text-base-white text-xs font-bold uppercase tracking-widest hover:bg-base-muted transition-colors border border-base-text hover:border-base-muted group/btn mt-2">
+                                    Find Packages <i data-lucide="search"
+                                        class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
+                                </button>
+                            </form>
+
+
+                            <!-- 5. TRANSPORT FORM -->
+                            <form id="form-transport"
+                                class="search-form js-search-form hidden space-y-4 text-sm fade-in-fast"
+                                data-type="transport">
+                                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex flex-col relative z-0">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Pick-up</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="map-pin"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="text" id="transport-from" placeholder="Airport or Address"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                        </div>
+                                    </div>
+                                    <button type="button"
+                                        class="js-swap-btn absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-1 md:translate-y-2 z-10 w-8 h-8 bg-base-white border border-base-border rounded-full flex items-center justify-center hover:bg-base-text hover:text-base-white transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-base-text focus:ring-offset-2"
+                                        data-swap-1="transport-from" data-swap-2="transport-to">
+                                        <i data-lucide="arrow-left-right"
+                                            class="w-3 h-3 rotate-90 md:rotate-0 transition-transform duration-300"></i>
+                                    </button>
+                                    <div class="flex flex-col relative z-0">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Drop-off</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="map-pin"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="text" id="transport-to" placeholder="Hotel or Address"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Pick-up
+                                            Date</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="calendar"
+                                                class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="date"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label
+                                            class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Time</label>
+                                        <div class="relative flex items-center">
+                                            <i data-lucide="clock" class="w-4 h-4 text-base-muted absolute left-3"></i>
+                                            <input type="time"
+                                                class="w-full bg-transparent border border-base-border pl-9 pr-3 py-3 focus:outline-none focus:border-base-text transition-colors text-base-text appearance-none font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label
+                                        class="text-[10px] uppercase tracking-widest text-base-muted mb-1 font-semibold">Vehicle
+                                        Type</label>
+                                    <div class="relative flex items-center">
+                                        <i data-lucide="car"
+                                            class="w-4 h-4 text-base-muted absolute left-3 pointer-events-none"></i>
+                                        <select
+                                            class="w-full bg-transparent border border-base-border pl-9 pr-8 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                            <option>Standard Sedan</option>
+                                            <option>Premium Sedan</option>
+                                            <option>SUV (Up to 6 passengers)</option>
+                                            <option>Luxury Van</option>
+                                        </select>
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-base-muted absolute right-3 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <button type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-base-text text-base-white text-xs font-bold uppercase tracking-widest hover:bg-base-muted transition-colors border border-base-text hover:border-base-muted group/btn mt-2">
+                                    Find Transport <i data-lucide="search"
+                                        class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-[1600px] mx-auto p-6 lg:p-12 space-y-6">
+
+        <!-- Accordion Item: BOOKING (Expanded by default) -->
+        <article id="booking" class="accordion-item active bg-base-white border border-base-border">
+            <!-- Header -->
+            <button
+                class="js-accordion-toggle group w-full flex items-center justify-between p-6 lg:p-10 hover:bg-base-bg transition-colors">
+                <h2 class="text-display text-4xl lg:text-7xl font-bold uppercase tracking-tighter">Booking</h2>
+                <div
+                    class="w-12 h-12 rounded-full border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors relative">
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-h"></div>
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-v"></div>
+                </div>
+            </button>
+
+            <!-- Content -->
+            <div class="accordion-content border-t border-base-border">
+                <div class="accordion-inner">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 p-6 lg:p-10">
+                        <!-- Left Column: Description -->
+                        <div class="lg:col-span-4 flex flex-col justify-start gap-8">
+                            <div>
+                                <h3 class="text-sm font-semibold uppercase tracking-wider mb-6">Seamless Reservations
+                                </h3>
+                                <p class="text-base-muted leading-relaxed font-light mb-4">
+                                    Experience the epitome of comfort and reliability. Our booking system is designed
+                                    with meticulous attention to detail, ensuring your transit and stay are nothing
+                                    short of perfection. Select from a curated fleet of premium vehicles and exclusive
+                                    luxury stays.
+                                </p>
+                            </div>
+                            <div class="space-y-4 text-sm">
+                                <div class="flex items-center justify-between border-b border-base-border pb-2">
+                                    <span class="text-base-muted">Available Fleet</span>
+                                    <span class="font-medium">1,240+ Vehicles</span>
+                                </div>
+                                <div class="flex items-center justify-between border-b border-base-border pb-2">
+                                    <span class="text-base-muted">Partner Hotels</span>
+                                    <span class="font-medium">Premium Selection</span>
+                                </div>
+                                <div class="flex items-center justify-between border-b border-base-border pb-2">
+                                    <span class="text-base-muted">Verification</span>
+                                    <span class="font-medium text-base-accent flex items-center gap-1"><i
+                                            data-lucide="shield-check" class="w-3 h-3"></i> 100% Escrow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Gallery -->
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Card 1 -->
+                            <div class="group cursor-pointer">
+                                <div class="img-zoom-container aspect-[4/5] bg-base-bg mb-4 border border-base-border">
+                                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
+                                        alt="Luxury Hotel Resort"
+                                        class="w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-semibold uppercase tracking-wide text-sm mb-1">Hotel Booking
+                                        </h4>
+                                        <p class="text-[10px] text-base-muted uppercase tracking-wider">Curated stays
+                                        </p>
+                                    </div>
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-5 h-5 text-base-muted group-hover:text-base-text transition-colors"></i>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="group cursor-pointer mt-0 md:mt-12">
+                                <div class="img-zoom-container aspect-[4/5] bg-base-bg mb-4 border border-base-border">
+                                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800"
+                                        alt="Car Rental"
+                                        class="w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all duration-700">
+                                </div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-semibold uppercase tracking-wide text-sm mb-1">Car Rental
+                                            Services</h4>
+                                        <p class="text-[10px] text-base-muted uppercase tracking-wider">Self-drive &
+                                            Chauffeur</p>
+                                    </div>
+                                    <i data-lucide="arrow-up-right"
+                                        class="w-5 h-5 text-base-muted group-hover:text-base-text transition-colors"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Accordion Item: PACKAGES -->
+        <article id="packages" class="accordion-item bg-base-white border border-base-border">
+            <button
+                class="js-accordion-toggle group w-full flex items-center justify-between p-6 lg:p-10 hover:bg-base-bg transition-colors">
+                <h2 class="text-display text-4xl lg:text-7xl font-bold uppercase tracking-tighter">Packages</h2>
+                <div
+                    class="w-12 h-12 rounded-full border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors relative">
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-h">
+                    </div>
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-v">
+                    </div>
+                </div>
+            </button>
+            <div class="accordion-content border-t border-base-border">
+                <div class="accordion-inner">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch p-6 lg:p-10">
+                        <!-- Left: Image -->
+                        <div class="lg:col-span-5 relative group h-full">
+                            <div
+                                class="img-zoom-container h-full min-h-[300px] lg:min-h-full bg-base-bg border border-base-border w-full relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&q=80&w=800"
+                                    alt="Travel Packages"
+                                    class="absolute inset-0 w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all duration-1000">
+                            </div>
+                        </div>
+
+                        <!-- Right: Features Grid -->
+                        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="home" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Village Stay Experiences
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Immerse yourself in
+                                        local culture with authentic village stays and rural tourism.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Packages for Couples
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Romantic getaways
+                                        carefully curated to create unforgettable moments together.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Group Tour Packages</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Exciting group
+                                        adventures perfect for friends, families, or solo travelers looking to mingle.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="compass" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Destination Discovery
+                                        Services</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Explore
+                                        off-the-beaten-path locations with expert guidance and detailed itineraries.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Accordion Item: PERSONALIZATION -->
+        <article id="personalization" class="accordion-item bg-base-white border border-base-border">
+            <button
+                class="js-accordion-toggle group w-full flex items-center justify-between p-6 lg:p-10 hover:bg-base-bg transition-colors">
+                <h2 class="text-display text-4xl lg:text-7xl font-bold uppercase tracking-tighter">Personalization</h2>
+                <div
+                    class="w-12 h-12 rounded-full border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors relative">
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-h">
+                    </div>
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-v">
+                    </div>
+                </div>
+            </button>
+            <div class="accordion-content border-t border-base-border">
+                <div class="accordion-inner">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch p-6 lg:p-10">
+                        <!-- Left: Features Grid -->
+                        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="zap" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">AI Itinerary Planner
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Smart algorithms
+                                        curate the perfect daily schedule tailored exactly to your preferences.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">AR Guided Historical
+                                        Tours</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Experience history
+                                        brought to life with immersive augmented reality explorations.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="compass" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Personalized Travel
+                                        Recommendations</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Discover hidden gems
+                                        and local favorites matched to your unique travel style.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Local Guide Connectivity
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Connect instantly with
+                                        verified local experts for authentic, insider experiences.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Image -->
+                        <div class="lg:col-span-5 relative group h-full">
+                            <div
+                                class="img-zoom-container h-full min-h-[300px] lg:min-h-full bg-base-bg border border-base-border w-full relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=800"
+                                    alt="Personalized Planning"
+                                    class="absolute inset-0 w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all duration-1000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Accordion Item: SUPPORT -->
+        <article id="support" class="accordion-item bg-base-white border border-base-border">
+            <button
+                class="js-accordion-toggle group w-full flex items-center justify-between p-6 lg:p-10 hover:bg-base-bg transition-colors">
+                <h2 class="text-display text-4xl lg:text-7xl font-bold uppercase tracking-tighter">Support</h2>
+                <div
+                    class="w-12 h-12 rounded-full border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors relative">
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-h">
+                    </div>
+                    <div class="absolute w-4 h-[1.5px] bg-current icon-line icon-line-v">
+                    </div>
+                </div>
+            </button>
+            <div class="accordion-content border-t border-base-border">
+                <div class="accordion-inner">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch p-6 lg:p-10">
+                        <!-- Left: Image -->
+                        <div class="lg:col-span-5 relative group h-full">
+                            <div
+                                class="img-zoom-container h-full min-h-[300px] lg:min-h-full bg-base-bg border border-base-border w-full relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800"
+                                    alt="Customer Support"
+                                    class="absolute inset-0 w-full h-full object-cover img-zoom grayscale group-hover:grayscale-0 transition-all duration-1000">
+                            </div>
+                        </div>
+
+                        <!-- Right: Features Grid -->
+                        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Luggage Pickup &
+                                        Delivery</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Seamless door-to-door
+                                        luggage transport to and from your destination.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Pet Travel Assistance
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Safe, compliant, and
+                                        comfortable travel arrangements for your furry friends.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="headphones" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Customer Support
+                                        Assistance</h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">24/7 dedicated
+                                        concierge
+                                        to assist you throughout your entire journey.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 group cursor-default">
+                                <div
+                                    class="w-12 h-12 border border-base-border flex items-center justify-center bg-base-white group-hover:bg-base-text group-hover:text-base-white transition-colors">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold uppercase tracking-wider mb-2">Verified Local Services
+                                    </h3>
+                                    <p class="text-sm text-base-muted leading-relaxed font-light">Access our trusted,
+                                        pre-vetted network of guides and local partners.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Get in Touch Section -->
+        <section id="contact" class="bg-base-white border border-base-border p-6 lg:p-12 mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                <!-- Left: Contact Info -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] tracking-[0.3em] uppercase text-base-text font-bold mb-6">Contact Us</div>
+                        <h2
+                            class="text-display text-4xl lg:text-6xl font-bold uppercase tracking-tighter leading-none mb-8">
+                            Let's map your <br /> next <span class="text-base-muted">adventure.</span>
+                        </h2>
+                        <p class="text-base-muted leading-relaxed font-light mb-12 max-w-md">
+                            Have questions about our packages or need a custom itinerary? Our team of travel experts is
+                            ready to help you craft the perfect journey.
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="lg:col-span-6 bg-base-bg p-6 border border-base-border">
+                    <form action="#" class="space-y-6 js-search-form" data-type="contact">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col">
+                                <label class="text-[10px] uppercase tracking-widest text-base-muted mb-2 font-bold">Full
+                                    Name</label>
+                                <input type="text" placeholder="Alex Mitchell"
+                                    class="w-full bg-base-white border border-base-border px-4 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                            </div>
+                            <div class="flex flex-col">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-base-muted mb-2 font-bold">Email
+                                    Address</label>
+                                <input type="email" placeholder="alex@example.com"
+                                    class="w-full bg-base-white border border-base-border px-4 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                            </div>
+                        </div>
+                        <div class="flex flex-col relative">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-base-muted mb-2 font-bold">Subject</label>
+                            <select id="contact-subject"
+                                class="w-full bg-base-white border border-base-border px-4 py-3 focus:outline-none focus:border-base-text transition-colors appearance-none cursor-pointer font-medium text-base-text">
+                                <option>General Inquiry</option>
+                                <option>Custom Itinerary Request</option>
+                                <option>Booking Support</option>
+                                <option>Partnership Opportunities</option>
+                                <option value="other">Other (Please specify)</option>
+                            </select>
+                            <i data-lucide="chevron-down"
+                                class="w-4 h-4 text-base-muted absolute right-4 top-[42px] pointer-events-none"></i>
+
+                            <!-- Custom Subject (Hidden initially) -->
+                            <div id="custom-subject-wrapper" class="hidden flex flex-col mt-4 fade-in-fast">
+                                <label
+                                    class="text-[10px] uppercase tracking-widest text-base-muted mb-2 font-bold">Please
+                                    specify subject</label>
+                                <input type="text" placeholder="Enter your subject"
+                                    class="w-full bg-base-white border border-base-border px-4 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium">
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <label
+                                class="text-[10px] uppercase tracking-widest text-base-muted mb-2 font-bold">Message</label>
+                            <textarea rows="5" placeholder="Tell us about your dream journey..."
+                                class="w-full bg-base-white border border-base-border px-4 py-3 focus:outline-none focus:border-base-text transition-colors placeholder:text-base-muted text-base-text font-medium resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-5 bg-base-text text-base-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-base-muted transition-all border border-base-text hover:border-base-muted group flex items-center justify-center gap-3">
+                            Send Message
+                            <i data-lucide="send"
+                                class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-base-white border-t border-base-border mt-12">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3">
+
+                <!-- Left Sidebar -->
+                <div class="p-8 lg:p-12 lg:border-r border-base-border">
+                    <div class="flex items-center gap-2 mb-8 group cursor-pointer w-max">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-base-accent"></i>
+                        <span
+                            class="text-sm font-semibold uppercase tracking-wider group-hover:text-base-accent transition-colors">Mumbai,
+                            Maharashtra, India</span>
+                    </div>
+
+                    <!-- Details Table -->
+                    <div class="mb-12">
+                        <div class="flex justify-between py-3 border-b border-base-border text-sm">
+                            <span class="text-base-muted">Phone:</span>
+                            <span class="font-medium">+91-9876543210</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-base-border text-sm">
+                            <span class="text-base-muted">Email:</span>
+                            <span class="font-medium">support@yatramitra.com</span>
+                        </div>
+                        <div class="flex justify-between py-3 border-b border-base-border text-sm">
+                            <span class="text-base-muted">Support:</span>
+                            <span class="font-medium">24/7 Available</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 mt-8">
+                        <a href="#"
+                            class="w-10 h-10 border border-base-border flex items-center justify-center bg-base-white hover:bg-base-text hover:text-base-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-base-border flex items-center justify-center bg-base-white hover:bg-base-text hover:text-base-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-base-border flex items-center justify-center bg-base-white hover:bg-base-text hover:text-base-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 border border-base-border flex items-center justify-center bg-base-white hover:bg-base-text hover:text-base-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Center Main Content -->
+                <div
+                    class="p-8 lg:p-12 lg:border-r border-base-border flex flex-col justify-between border-t lg:border-t-0 border-base-border">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-[0.2em] text-base-muted mb-8">Our Services</h4>
+                        <ul class="space-y-4">
+                            <li><a href="#booking"
+                                    class="text-xl md:text-2xl font-medium hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                        data-lucide="arrow-right" class="w-5 h-5"></i> Hotel Bookings</a></li>
+                            <li><a href="#booking"
+                                    class="text-xl md:text-2xl font-medium hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                        data-lucide="arrow-right" class="w-5 h-5"></i> Private Transport</a></li>
+                            <li><a href="#personalization"
+                                    class="text-xl md:text-2xl font-medium hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                        data-lucide="arrow-right" class="w-5 h-5"></i> Personalized Trip</a></li>
+                            <li><a href="#support"
+                                    class="text-xl md:text-2xl font-medium hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                        data-lucide="arrow-right" class="w-5 h-5"></i> Local Guide Network</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="p-8 lg:p-12 border-t lg:border-t-0 border-base-border flex flex-col items-end">
+                    <h4 class="text-xs uppercase tracking-[0.2em] text-base-muted mb-4 w-full text-right">About
+                        YatraMitra</h4>
+                    <div class="w-full h-px bg-base-border mb-6"></div>
+
+                    <div class="flex items-center gap-6 justify-end w-full">
+                        <div class="w-24 h-24 shrink-0 bg-base-bg border border-base-border overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=200"
+                                alt="About" class="w-full h-full object-cover grayscale">
+                        </div>
+                        <p class="text-sm text-base-text leading-relaxed max-w-[280px] text-left">
+                            Complete tourism platform integrating hotels, transport, destinations, and rewards in one
+                            seamless experience.
+                        </p>
+                    </div>
+                    <ul class="w-full text-left space-y-3 mt-8 mb-4">
+                        <li><a href="#"
+                                class="text-sm font-medium text-base-text hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i> The
+                                team</a></li>
+                        <li><a href="#"
+                                class="text-sm font-medium text-base-text hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i> Careers</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-sm font-medium text-base-text hover:text-base-muted transition-colors flex items-center gap-3"><i
+                                    data-lucide="arrow-right" class="w-4 h-4"></i> Partner
+                                with us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer Bar -->
+            <div
+                class="border-t border-base-border p-6 lg:px-12 lg:py-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-[10px] sm:text-xs text-base-muted uppercase tracking-widest">
+
+                <!-- Payment Methods -->
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-base-text mr-2">Accepts:</span>
+                    <span class="flex items-center gap-1"><i data-lucide="credit-card" class="w-3 h-3"></i> VISA</span>
+                    <span>&bull;</span>
+                    <span class="flex items-center gap-1"><i data-lucide="credit-card" class="w-3 h-3"></i> MC</span>
+                    <span>&bull;</span>
+                    <span class="flex items-center gap-1"><i data-lucide="credit-card" class="w-3 h-3"></i> AMEX</span>
+                    <span>&bull;</span>
+                    <span class="flex items-center gap-1"><i data-lucide="smartphone" class="w-3 h-3"></i> UPI</span>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-8">
+                    <a href="#" class="hover:text-base-text transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-base-text transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-base-text transition-colors">Cookie Policy</a>
+                    <a href="#" class="hover:text-base-text transition-colors">Refund Policy</a>
+                    <a href="#" class="hover:text-base-text transition-colors">FAQs</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center lg:text-right">
+                    &copy; 2026 YatraMitra. All rights reserved.
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-base-text/50 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div
+            class="absolute right-0 top-0 h-full w-full max-w-xs bg-base-white border-l border-base-border p-6 flex flex-col translate-x-full transition-transform duration-300">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-display text-xl font-bold tracking-tight">YatraMitr.</span>
+                <button id="close-menu" class="p-2 text-base-text">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-6 text-lg font-bold uppercase tracking-tight overflow-y-auto">
+                <a href="#" class="mobile-nav-link border-b border-base-border pb-2">Home</a>
+
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full flex items-center justify-between border-b border-base-border pb-2 js-mobile-dropdown-toggle">
+                        Booking <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div
+                        class="hidden flex flex-col gap-3 pl-4 pt-3 text-sm font-medium normal-case tracking-normal text-base-muted">
+                        <a href="#" class="hover:text-base-text transition-colors">Hotel Booking</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Ride Sharing</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Car Rental Services</a>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full flex items-center justify-between border-b border-base-border pb-2 js-mobile-dropdown-toggle">
+                        Packages <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div
+                        class="hidden flex flex-col gap-3 pl-4 pt-3 text-sm font-medium normal-case tracking-normal text-base-muted">
+                        <a href="#" class="hover:text-base-text transition-colors">Group Tour Packages</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Packages for Couples</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Village Stay Experiences</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Destination Discovery Services</a>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full flex items-center justify-between border-b border-base-border pb-2 js-mobile-dropdown-toggle">
+                        Personalization <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div
+                        class="hidden flex flex-col gap-3 pl-4 pt-3 text-sm font-medium normal-case tracking-normal text-base-muted">
+                        <a href="#" class="hover:text-base-text transition-colors">Custom Itinerary</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Private Guide Services</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Activity Booking</a>
+                    </div>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <button
+                        class="w-full flex items-center justify-between border-b border-base-border pb-2 js-mobile-dropdown-toggle">
+                        Support <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
+                    </button>
+                    <div
+                        class="hidden flex flex-col gap-3 pl-4 pt-3 text-sm font-medium normal-case tracking-normal text-base-muted">
+                        <a href="#" class="hover:text-base-text transition-colors">24/7 Concierge Support</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Safety & Emergency Center</a>
+                        <a href="#" class="hover:text-base-text transition-colors">Travel Insurance Services</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="mt-auto pt-8 border-t border-base-border flex flex-col gap-4">
+                <button
+                    class="w-full py-4 border border-base-border text-sm font-bold uppercase tracking-widest hover:bg-base-bg transition-colors">Sign
+                    In</button>
+                <button
+                    class="w-full py-4 bg-base-text text-base-white text-sm font-bold uppercase tracking-widest hover:bg-base-muted transition-colors">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactions -->
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+/* ==========================================================================
+   YatraMitr Customer Portal Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Global Styles & Resets
+   -------------------------------------------------------------------------- */
+body {
+    background-color: #f7f7f7;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Minimal Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+}
+
+.hide-scrollbar::-webkit-scrollbar { 
+    display: none; 
+}
+
+.hide-scrollbar { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography Utilities
+   -------------------------------------------------------------------------- */
+.text-display {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout Components & Dividers
+   -------------------------------------------------------------------------- */
+.divider-b { border-bottom: 1px solid #d9d9d9; }
+.divider-t { border-top: 1px solid #d9d9d9; }
+.divider-r { border-right: 1px solid #d9d9d9; }
+.divider-l { border-left: 1px solid #d9d9d9; }
+
+/* --------------------------------------------------------------------------
+   4. UI Components & Interactions
+   -------------------------------------------------------------------------- */
+/* Nav Links */
+.nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #111111;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Accordion */
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.accordion-inner {
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.accordion-item:not(.active) .accordion-content {
+    border-top-color: transparent;
+}
+
+.accordion-item.active .accordion-content {
+    grid-template-rows: 1fr;
+    border-top-color: #d9d9d9;
+}
+
+.accordion-item.active .accordion-inner {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.icon-line {
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.accordion-item.active .icon-line-v {
+    transform: rotate(90deg);
+}
+
+/* Image Zoom */
+.img-zoom-container {
+    overflow: hidden;
+}
+
+.img-zoom {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-zoom-container:hover .img-zoom {
+    transform: scale(1.05);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   5. Animations
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeInFast {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-fast { 
+    animation: fadeInFast 0.3s ease forwards; 
+}
