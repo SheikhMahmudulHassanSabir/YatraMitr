@@ -31,13 +31,13 @@ body {
     background: #a3a3a3;
 }
 
-.hide-scrollbar::-webkit-scrollbar { 
-    display: none; 
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
-.hide-scrollbar { 
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -51,10 +51,21 @@ body {
 /* --------------------------------------------------------------------------
    3. Layout Components & Dividers
    -------------------------------------------------------------------------- */
-.divider-b { border-bottom: 1px solid #d9d9d9; }
-.divider-t { border-top: 1px solid #d9d9d9; }
-.divider-r { border-right: 1px solid #d9d9d9; }
-.divider-l { border-left: 1px solid #d9d9d9; }
+.divider-b {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.divider-t {
+    border-top: 1px solid #d9d9d9;
+}
+
+.divider-r {
+    border-right: 1px solid #d9d9d9;
+}
+
+.divider-l {
+    border-left: 1px solid #d9d9d9;
+}
 
 /* --------------------------------------------------------------------------
    4. UI Components & Interactions
@@ -128,11 +139,19 @@ body {
 }
 
 .img-zoom {
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .img-zoom-container:hover .img-zoom {
     transform: scale(1.05);
+}
+
+/* Auto-color images when accordion is active */
+.accordion-item.active .img-zoom {
+    filter: grayscale(0) !important;
+    transition: filter 3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    /* Wait for accordion expansion to finish */
 }
 
 /* Dropdown */
@@ -161,6 +180,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -172,10 +192,17 @@ body {
 }
 
 @keyframes fadeInFast {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.fade-in-fast { 
-    animation: fadeInFast 0.3s ease forwards; 
+.fade-in-fast {
+    animation: fadeInFast 0.3s ease forwards;
 }
