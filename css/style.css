@@ -9,6 +9,9 @@ body {
     background-color: #f7f7f7;
     color: #111111;
     -webkit-font-smoothing: antialiased;
+    min-width: 880px;
+    min-height: 448px;
+    overflow-x: auto;
 }
 
 /* Minimal Scrollbar */
